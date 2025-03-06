@@ -5,16 +5,17 @@ import sidebar  # Importa a lógica da barra lateral
 st.title("Anotações Multimídia")
 
 # Barra lateral
-sidebar.sidebar_content()
+pagina_selecionada = sidebar.sidebar_content()
 
 # Conteúdo principal (envio de arquivos)
-st.header("Envio de Arquivos")
-arquivo = st.file_uploader("Selecione um arquivo", type=["png", "jpg", "jpeg", "mp3", "mp4", "wav", "pdf", "txt", "docx"])
-if arquivo:
-    if st.button("Enviar para Análise"):
-        # Enviar arquivo para o n8n
-        enviar_arquivo_n8n(arquivo)
-        st.success("Arquivo enviado para análise!")
+if pagina_selecionada == "Envio de Arquivos":
+    st.header("Envio de Arquivos")
+    arquivo = st.file_uploader("Selecione um arquivo", type=["png", "jpg", "jpeg", "mp3", "mp4", "wav", "pdf", "txt", "docx"])
+    if arquivo:
+        if st.button("Enviar para Análise"):
+            # Enviar arquivo para o n8n
+            enviar_arquivo_n8n(arquivo)
+            st.success("Arquivo enviado para análise!")
 
 # Função para enviar arquivo para o n8n
 def enviar_arquivo_n8n(arquivo):
