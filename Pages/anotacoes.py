@@ -9,3 +9,4 @@ def exibir_anotacoes():
     data = {"Título": ["Anotação 1", "Anotação 2"], "Data": ["2023-10-26", "2023-10-27"]}
     df = pd.DataFrame(data)
     st.dataframe(df)
+    
