@@ -27,7 +27,3 @@ st.header("Anotações")
 #df = pd.DataFrame(data)
 #st.dataframe(df)
 
-
-
-if __name__ == "__main__":
-    main()
