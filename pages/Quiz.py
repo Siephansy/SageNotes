@@ -1,6 +1,8 @@
 import streamlit as st
 import time
 import random
+import networkx as nx
+import matplotlib.pyplot as plt
 
 # Dados do quiz
 quiz_data = [
