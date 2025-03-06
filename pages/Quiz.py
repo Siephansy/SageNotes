@@ -105,7 +105,7 @@ def main():
         st.write(f"Você acertou {st.session_state.pontuacao} de {len(quiz_data)} perguntas!")
 
 
-st.title("Visão de Nós")
+st.header("Visão de Nós")
 # Lógica para construir e exibir a visão de nós
 # (Leia os dados do Google Sheets e use networkx)
 # Exemplo simples (substitua pela sua lógica real):
