@@ -4,9 +4,6 @@ import sidebar  # Importa a lógica da barra lateral
 
 st.title("Anotações Multimídia")
 
-# Barra lateral
-pagina_selecionada = sidebar.sidebar_content()
-
 # Conteúdo principal (envio de arquivos)
 if pagina_selecionada == "Envio de Arquivos":
     st.header("Envio de Arquivos")
