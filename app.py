@@ -1,31 +1,20 @@
 import streamlit as st
-import pandas as pd
-import requests  # Para enviar arquivos para o n8n
+import requests
+import sidebar  # Importa a lógica da barra lateral
 
 st.title("Anotações Multimídia")
 
-# Abas do aplicativo
-abas = st.tabs(["Envio de Arquivos", "Visão de Nós", "Anotações"])
+# Barra lateral
+sidebar.sidebar_content()
 
-# Aba 1: Envio de Arquivos
-with abas[0]:
-    st.header("Envio de Arquivos")
-    arquivo = st.file_uploader("Selecione um arquivo", type=["png", "jpg", "jpeg", "mp3", "mp4", "wav", "pdf", "txt", "docx"])
-    if arquivo:
-        if st.button("Enviar para Análise"):
-            # Enviar arquivo para o n8n
-            enviar_arquivo_n8n(arquivo)
-            st.success("Arquivo enviado para análise!")
-
-# Aba 2: Visão de Nós
-with abas[1]:
-    st.header("Visão de Nós")
-    # Lógica para construir a visão de nós (a ser implementada)
-
-# Aba 3: Anotações
-with abas[2]:
-    st.header("Anotações")
-    # Lógica para exibir as anotações (a ser implementada)
+# Conteúdo principal (envio de arquivos)
+st.header("Envio de Arquivos")
+arquivo = st.file_uploader("Selecione um arquivo", type=["png", "jpg", "jpeg", "mp3", "mp4", "wav", "pdf", "txt", "docx"])
+if arquivo:
+    if st.button("Enviar para Análise"):
+        # Enviar arquivo para o n8n
+        enviar_arquivo_n8n(arquivo)
+        st.success("Arquivo enviado para análise!")
 
 # Função para enviar arquivo para o n8n
 def enviar_arquivo_n8n(arquivo):
