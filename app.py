@@ -1,6 +1,5 @@
 import streamlit as st
 import requests
-import sidebar  # Importa a lógica da barra lateral
 
 st.title("Anotações Multimídia")
 
