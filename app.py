@@ -30,3 +30,4 @@ def enviar_arquivo_n8n(arquivo):
         print("Arquivo enviado com sucesso para o n8n!")
     else:
         print(f"Erro ao enviar arquivo para o n8n: {response.status_code}")
+
