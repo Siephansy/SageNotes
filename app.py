@@ -6,7 +6,7 @@ from datetime import datetime
 
 
 st.subheader("Webhook Client")
-url = st.text_input("Webhook URL", "https://webhook-server.com/webhook-1")
+url = st.text_input("Webhook URL", "http://127.0.0.1:5678/webhook-test/7109995a-fbfa-4b8a-8049-8ee62622d853")
 payload = st.text_input("JSON Payload", "{}")
 
 if st.button("Submit"):
