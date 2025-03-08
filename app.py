@@ -8,27 +8,21 @@ from datetime import datetime
 # Função para enviar arquivo para o n8n
 def enviar_arquivo_n8n(arquivo):
     # Configurar a URL do webhook do n8n
-    webhook_url = "https://webhook-test.com/64fe5385ead4dfcc339ba917afe089f9"  # Substitua pela sua URL do webhook
+    webhook_url = "http://127.0.0.1:5678/webhook/7109995a-fbfa-4b8a-8049-8ee62622d853"  # Substitua pela sua URL do webhook
 
     # Enviar arquivo para o n8n
     try:
-        st.subheader("d")
         files = {"arquivo": (arquivo.name, arquivo, arquivo.type)}  # Formato correto para enviar arquivos com requests
         response = requests.post(webhook_url, files=files)
-        st.subheader("e")
 
         # Verificar a resposta do n8n
         if response.status_code == 200:
-            st.subheader("f")
             st.success("Arquivo enviado com sucesso para o n8n!")
             print("Arquivo enviado com sucesso para o n8n!")
-            st.subheader("g")
         else:
-            st.subheader("h")
             st.error(f"Erro ao enviar arquivo para o n8n: {response.status_code}")
             print(f"Erro ao enviar arquivo para o n8n: {response.status_code}")
             print(response.text) # Print the error returned by n8n
-            st.subheader("i")
     except Exception as e:
         st.error(f"Erro ao enviar o arquivo: {e}")
         print(f"Erro ao enviar o arquivo: {e}")
