@@ -10,12 +10,9 @@ def enviar_arquivo_n8n(arquivo):
     # Configurar a URL do webhook do n8n
     webhook_url = "http://127.0.0.1:5678/webhook-test/7109995a-fbfa-4b8a-8049-8ee62622d853"  # Substitua pela sua URL do webhook
 
-    st.subheader("c")
-
     # Enviar arquivo para o n8n
     try:
         st.subheader("d")
-        payload = st.text_input("JSON Payload", "{}")
         files = {"arquivo": (arquivo.name, arquivo, arquivo.type)}  # Formato correto para enviar arquivos com requests
         response = requests.post(webhook_url, files=files)
         st.subheader("e")
@@ -33,10 +30,8 @@ def enviar_arquivo_n8n(arquivo):
             print(response.text) # Print the error returned by n8n
             st.subheader("i")
     except Exception as e:
-        st.subheader("j")
         st.error(f"Erro ao enviar o arquivo: {e}")
         print(f"Erro ao enviar o arquivo: {e}")
-        st.subheader("k")
 
 
 
