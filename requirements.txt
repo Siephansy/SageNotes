@@ -87,3 +87,5 @@ plotly
 openpyxl
 matplotlib
 opencv-python
+requests
+
