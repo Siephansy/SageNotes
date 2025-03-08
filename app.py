@@ -12,7 +12,7 @@ def enviar_arquivo_n8n(arquivo):
 
     # Enviar arquivo para o n8n
     try:
-        #files = {"arquivo": (arquivo.name, arquivo, arquivo.type)}  # Formato correto para enviar arquivos com requests
+        files = {"arquivo": (arquivo.name, arquivo, arquivo.type)}  # Formato correto para enviar arquivos com requests
         #response = requests.post(webhook_url, files=files)
         response = requests.post(webhook_url)
 
@@ -38,4 +38,4 @@ arquivo = st.file_uploader("Selecione um arquivo", type=["png", "jpg", "jpeg", "
 if arquivo:
     if st.button("Enviar para Análise"):
         # Enviar arquivo para o n8n
-        enviar_arquivo_n8n(webhook_url)
+        enviar_arquivo_n8n(arquivo)
