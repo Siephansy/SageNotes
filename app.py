@@ -12,8 +12,9 @@ def enviar_arquivo_n8n(arquivo):
 
     # Enviar arquivo para o n8n
     try:
-        files = {"arquivo": (arquivo.name, arquivo, arquivo.type)}  # Formato correto para enviar arquivos com requests
-        response = requests.post(webhook_url, files=files)
+        #files = {"arquivo": (arquivo.name, arquivo, arquivo.type)}  # Formato correto para enviar arquivos com requests
+        #response = requests.post(webhook_url, files=files)
+        response = requests.post(webhook_url)
 
         # Verificar a resposta do n8n
         if response.status_code == 200:
