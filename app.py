@@ -40,7 +40,7 @@ def enviar_arquivo_n8n(arquivo):
             print("Arquivo enviado com sucesso para o n8n!")
             st.subheader("g")
         else:
-            st.subheader("h)
+            st.subheader("h")
             st.error(f"Erro ao enviar arquivo para o n8n: {response.status_code}")
             print(f"Erro ao enviar arquivo para o n8n: {response.status_code}")
             print(response.text) # Print the error returned by n8n
