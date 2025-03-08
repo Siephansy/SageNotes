@@ -8,7 +8,7 @@ from datetime import datetime
 # Função para enviar arquivo para o n8n
 def enviar_arquivo_n8n(arquivo):
     # Configurar a URL do webhook do n8n
-    webhook_url = "http://localhost:5678/webhook-test/7109995a-fbfa-4b8a-8049-8ee62622d853"  # Substitua pela sua URL do webhook
+    webhook_url = "http://127.0.0.1:5678/webhook-test/7109995a-fbfa-4b8a-8049-8ee62622d853"  # Substitua pela sua URL do webhook
 
     # Enviar arquivo para o n8n
     files = {"arquivo": arquivo}
