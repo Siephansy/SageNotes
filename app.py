@@ -25,14 +25,12 @@ def testar_webhook_n8n():
         print(f"Erro de conexão ao webhook: {e}")
 
 
-# Função para enviar arquivo para o n8n (mantém-se como estava)
+# Função para enviar arquivo para o n8n
 def enviar_arquivo_n8n(arquivo):
     # Enviar arquivo para o n8n
     try:
         files = {"arquivo": (arquivo.name, arquivo, arquivo.type)}  # Formato correto para enviar arquivos com requests
-        #response = requests.post(webhook_url, files=files) #original
-        response = requests.post(webhook_url, files=files) #mudei para enviar arquivos
-
+        response = requests.post(webhook_url, files=files)
 
         # Verificar a resposta do n8n
         if response.status_code == 200:
@@ -59,4 +57,4 @@ arquivo = st.file_uploader("Selecione um arquivo", type=["png", "jpg", "jpeg", "
 if arquivo:
     if st.button("Enviar para Análise"):
         # Enviar arquivo para o n8n
-        enviar_arquivo_n8n(arquivo)
+        enviar_arquivo_n8n(arquivo) # Chamada CORRIGIDA da função enviar_arquivo_n8n, passando 'arquivo' como argumento
