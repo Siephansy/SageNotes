@@ -4,12 +4,12 @@ import pandas as pd
 import requests
 from datetime import datetime 
 
+# Configurar a URL do webhook do n8n
+webhook_url = "http://127.0.0.1:5678/webhook/7109995a-fbfa-4b8a-8049-8ee62622d853"  # Substitua pela sua URL do webhook
+
 
 # Função para enviar arquivo para o n8n
 def enviar_arquivo_n8n(arquivo):
-    # Configurar a URL do webhook do n8n
-    webhook_url = "http://127.0.0.1:5678/webhook/7109995a-fbfa-4b8a-8049-8ee62622d853"  # Substitua pela sua URL do webhook
-
     # Enviar arquivo para o n8n
     try:
         files = {"arquivo": (arquivo.name, arquivo, arquivo.type)}  # Formato correto para enviar arquivos com requests
