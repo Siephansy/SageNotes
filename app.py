@@ -38,4 +38,4 @@ arquivo = st.file_uploader("Selecione um arquivo", type=["png", "jpg", "jpeg", "
 if arquivo:
     if st.button("Enviar para Análise"):
         # Enviar arquivo para o n8n
-        enviar_arquivo_n8n(arquivo)
+        enviar_arquivo_n8n(webhook_url)
